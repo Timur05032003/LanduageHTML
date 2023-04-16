@@ -116,11 +116,16 @@
     <ref role="1XX52x" to="qa5w:29zUSxUxKTB" resolve="TitleElement" />
     <node concept="3EZMnI" id="2AKJ2fVHEL9" role="2wV5jI">
       <node concept="3XFhqQ" id="2AKJ2fVHQn2" role="3EZMnx" />
-      <node concept="3F0ifn" id="2AKJ2fVHF3c" role="3EZMnx">
+      <node concept="3F0ifn" id="7WpIU0MW5U1" role="3EZMnx">
         <property role="3F0ifm" value="&lt;title&gt;" />
       </node>
-      <node concept="3F0A7n" id="2AKJ2fVHG1G" role="3EZMnx">
-        <ref role="1NtTu8" to="qa5w:29zUSxUxL8G" resolve="text" />
+      <node concept="3EZMnI" id="7WpIU0MW5XP" role="3EZMnx">
+        <node concept="VPM3Z" id="7WpIU0MW5XR" role="3F10Kt" />
+        <node concept="3F2HdR" id="7WpIU0MW60u" role="3EZMnx">
+          <ref role="1NtTu8" to="qa5w:7WpIU0MW5_C" resolve="children" />
+          <node concept="2iRfu4" id="7WpIU0MW60w" role="2czzBx" />
+        </node>
+        <node concept="2iRfu4" id="7WpIU0MW5XU" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="2AKJ2fVHFd7" role="3EZMnx">
         <property role="3F0ifm" value="&lt;/title&gt;" />
@@ -349,6 +354,7 @@
     <property role="3GE5qa" value="Elements" />
     <ref role="1XX52x" to="qa5w:1_f3nVNaOpO" resolve="ItalicTag" />
     <node concept="3EZMnI" id="1_f3nVNaP6c" role="2wV5jI">
+      <node concept="3XFhqQ" id="7WpIU0MVkGn" role="3EZMnx" />
       <node concept="3F0ifn" id="1_f3nVNaPbe" role="3EZMnx">
         <property role="3F0ifm" value="&lt;i&gt;" />
       </node>

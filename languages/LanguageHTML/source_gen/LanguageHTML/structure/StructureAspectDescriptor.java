@@ -239,7 +239,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a8704b9L);
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/2478083191387655783");
     b.version(3);
-    b.property("text", 0x2263eb887a87122cL).type(PrimitiveTypeId.STRING).origin("2478083191387656748").done();
+    b.aggregate("children", 0x7f19bba032f05968L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(true).ordered(true).multiple(true).origin("9158557613958388072").done();
     b.alias("<title>");
     return b.create();
   }

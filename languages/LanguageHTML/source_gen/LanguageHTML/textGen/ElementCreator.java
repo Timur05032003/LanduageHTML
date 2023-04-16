@@ -7,8 +7,8 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -17,74 +17,46 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public abstract class ElementCreator {
   public static void byElement(SNode node, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(ElementCreator.createBlock(SLinkOperations.getTarget(node, LINKS.root$pJQk), ctx));
+    tgs.append(ElementCreator.createHtml(SLinkOperations.getTarget(node, LINKS.root$pJQk), ctx));
   }
-  protected static String createBlock(SNode node, final TextGenContext ctx) {
+  protected static String createHtml(SNode node, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    String result = "";
+    StringBuilder resultString = new StringBuilder();
 
     if (SNodeOperations.isInstanceOf(node, CONCEPTS.HtmlDocument$1h)) {
-      result += "<html>\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</html>";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<html>\n", "</html>", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.Head$iT)) {
-      result += "<head>\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</head>\n";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<head>\n", "</head>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.Body$mf)) {
-      result += "<body>\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</body>\n";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<body>\n", "</body>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.DivElement$9$)) {
-      result += "<div>\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</div>\n";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<div>\n", "</div>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.SpanElement$D6)) {
-      result += "<span>";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</span>";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<span>", "</span>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.ParagraphElement$_9)) {
-      result += "\n<p>\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "\n</p>\n";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<p>\n", "</p>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.TitleElement$wb)) {
-      result += "<title>";
-      result += SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.TitleElement$wb), PROPS.text$GItu);
-      result += "</title>\n";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<title>", "</title>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.AnchorElement$tJ)) {
-      result += "<a href=" + SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.AnchorElement$tJ), PROPS.href$TqGt) + ">\n";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "\n</a>";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<a href=" + SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.AnchorElement$tJ), PROPS.href$TqGt) + ">\n", "</a>\n", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.StrongElement$Pn)) {
-      result += "<strong>";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</strong>";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<strong>", "</strong>", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.ItalicTag$hK)) {
-      result += "<i>";
-      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        result += ElementCreator.createBlock(itNode, ctx);
-      }
-      result += "</i>";
+      resultString.append(ElementCreator.createHtmlBlock(node, "<i>", "</i>", ctx));
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.TextElement$H$)) {
-      result += SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.TextElement$H$), PROPS.text$7iLc);
+      resultString.append(SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.TextElement$H$), PROPS.text$7iLc)).append("\n");
     }
 
+    return resultString.toString();
+  }
+  protected static StringBuilder createHtmlBlock(SNode node, String openTag, String closeTag, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    StringBuilder result = new StringBuilder();
+    result.append(openTag);
+    for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+      result.append(ElementCreator.createHtml(itNode, ctx));
+    }
+    result.append(closeTag);
     return result;
   }
 
@@ -107,7 +79,6 @@ public abstract class ElementCreator {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty text$GItu = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a870e67L, 0x2263eb887a87122cL, "text");
     /*package*/ static final SProperty href$TqGt = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872acaL, 0x2263eb887a872c52L, "href");
     /*package*/ static final SProperty text$7iLc = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a86a58bL, 0x2263eb887a86a84cL, "text");
   }

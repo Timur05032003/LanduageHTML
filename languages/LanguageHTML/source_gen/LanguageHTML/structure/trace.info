@@ -337,8 +337,8 @@
       <node id="2478083191387655783" at="238,48,239,76" concept="0" />
       <node id="2478083191387655783" at="239,76,240,99" concept="0" />
       <node id="2478083191387655783" at="240,99,241,17" concept="0" />
-      <node id="2478083191387656748" at="241,17,242,110" concept="0" />
-      <node id="2478083191387655783" at="242,110,243,23" concept="0" />
+      <node id="9158557613958388072" at="241,17,242,200" concept="0" />
+      <node id="2478083191387655783" at="242,200,243,23" concept="0" />
       <node id="2478083191387655783" at="243,23,244,22" concept="4" />
       <node id="2478083191387655783" at="235,0,246,0" concept="7" trace="createDescriptorForTitleElement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2478083191387655783" at="80,46,81,37" />

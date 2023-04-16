@@ -131,10 +131,12 @@
     <property role="3GE5qa" value="Elements.HeadElements" />
     <property role="R4oN_" value="&lt;title&gt; tag" />
     <ref role="1TJDcQ" node="29zUSxUxKiT" resolve="HeadChild" />
-    <node concept="1TJgyi" id="29zUSxUxL8G" role="1TKVEl">
-      <property role="IQ2nx" value="2478083191387656748" />
-      <property role="TrG5h" value="text" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="7WpIU0MW5_C" role="1TKVEi">
+      <property role="IQ2ns" value="9158557613958388072" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="children" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="29zUSxUxC8P" resolve="BodyElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="29zUSxUxLVI">
