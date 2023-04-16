@@ -1,0 +1,4 @@
+# Project exclude paths
+/languages/LanguageHTML/classes_gen/
+/languages/LanguageHTML/generator/classes_gen/
+/languages/LanguageHTML.sandbox/classes_gen/
