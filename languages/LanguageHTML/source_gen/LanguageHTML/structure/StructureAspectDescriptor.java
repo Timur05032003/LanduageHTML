@@ -22,8 +22,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptHeadChild = createDescriptorForHeadChild();
   /*package*/ final ConceptDescriptor myConceptHtmlDocument = createDescriptorForHtmlDocument();
   /*package*/ final ConceptDescriptor myConceptHtmlElement = createDescriptorForHtmlElement();
+  /*package*/ final ConceptDescriptor myConceptItalicTag = createDescriptorForItalicTag();
   /*package*/ final ConceptDescriptor myConceptParagraphElement = createDescriptorForParagraphElement();
   /*package*/ final ConceptDescriptor myConceptSpanElement = createDescriptorForSpanElement();
+  /*package*/ final ConceptDescriptor myConceptStrongElement = createDescriptorForStrongElement();
   /*package*/ final ConceptDescriptor myConceptTextElement = createDescriptorForTextElement();
   /*package*/ final ConceptDescriptor myConceptTitleElement = createDescriptorForTitleElement();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -40,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAnchorElement, myConceptBody, myConceptBodyElement, myConceptDivElement, myConceptDocument, myConceptHead, myConceptHeadChild, myConceptHtmlDocument, myConceptHtmlElement, myConceptParagraphElement, myConceptSpanElement, myConceptTextElement, myConceptTitleElement);
+    return Arrays.asList(myConceptAnchorElement, myConceptBody, myConceptBodyElement, myConceptDivElement, myConceptDocument, myConceptHead, myConceptHeadChild, myConceptHtmlDocument, myConceptHtmlElement, myConceptItalicTag, myConceptParagraphElement, myConceptSpanElement, myConceptStrongElement, myConceptTextElement, myConceptTitleElement);
   }
 
   @Override
@@ -65,10 +67,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptHtmlDocument;
       case LanguageConceptSwitch.HtmlElement:
         return myConceptHtmlElement;
+      case LanguageConceptSwitch.ItalicTag:
+        return myConceptItalicTag;
       case LanguageConceptSwitch.ParagraphElement:
         return myConceptParagraphElement;
       case LanguageConceptSwitch.SpanElement:
         return myConceptSpanElement;
+      case LanguageConceptSwitch.StrongElement:
+        return myConceptStrongElement;
       case LanguageConceptSwitch.TextElement:
         return myConceptTextElement;
       case LanguageConceptSwitch.TitleElement:
@@ -92,7 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("href", 0x2263eb887a872c52L).type(PrimitiveTypeId.STRING).origin("2478083191387663442").done();
     b.aggregate("children", 0x7a7699b586c6a4abL).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(false).ordered(true).multiple(true).origin("8824409524808361131").done();
-    b.alias("<AnchorElement_Alias>");
+    b.alias("<anchor>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBody() {
@@ -101,6 +107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/8824409524808690211");
     b.version(3);
     b.aggregate("children", 0x7a7699b586cbb056L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(true).ordered(true).multiple(true).origin("8824409524808691798").done();
+    b.alias("<body>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBodyElement() {
@@ -121,7 +128,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("class", 0x29b0bc23fbba0a76L).type(PrimitiveTypeId.STRING).origin("3004107814189271670").done();
     b.aggregate("children", 0x2263eb887a87212eL).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(false).ordered(true).multiple(true).origin("2478083191387660590").done();
-    b.alias("<DivElement_Alias>");
+    b.alias("<div>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDocument() {
@@ -139,6 +146,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/8824409524808689794");
     b.version(3);
     b.aggregate("children", 0x7a7699b586cbb622L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a86e354L).optional(true).ordered(true).multiple(true).origin("8824409524808693282").done();
+    b.alias("<head>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHeadChild() {
@@ -157,6 +165,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.aggregate("head", 0x2263eb887a86e24dL).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x7a7699b586cba882L).optional(true).ordered(true).multiple(false).origin("2478083191387644493").done();
     b.aggregate("body", 0x2263eb887a86ea77L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x7a7699b586cbaa23L).optional(true).ordered(true).multiple(false).origin("2478083191387646583").done();
+    b.alias("<html>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHtmlElement() {
@@ -167,6 +176,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("tagName", 0x2263eb887a86e62fL).type(PrimitiveTypeId.STRING).origin("2478083191387645487").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForItalicTag() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LanguageHTML", "ItalicTag", 0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x194f0d7ef32b4674L);
+    b.class_(false, false, false);
+    // extends: LanguageHTML.structure.BodyElement
+    b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L);
+    b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/1823691213005080180");
+    b.version(3);
+    b.aggregate("children", 0x194f0d7ef32b4cf6L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(true).ordered(true).multiple(true).origin("1823691213005081846").done();
+    b.alias("<i>");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForParagraphElement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LanguageHTML", "ParagraphElement", 0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872889L);
     b.class_(false, false, false);
@@ -174,8 +194,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L);
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/2478083191387662473");
     b.version(3);
-    b.property("text", 0x2263eb887a872975L).type(PrimitiveTypeId.STRING).origin("2478083191387662709").done();
-    b.alias("<ParagraphElement_Alias>");
+    b.aggregate("children", 0x194f0d7ef32a04e9L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(true).ordered(true).multiple(true).origin("1823691213004997865").done();
+    b.alias("<paragraph>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpanElement() {
@@ -187,7 +207,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("class", 0x29b0bc23fbb7c847L).type(PrimitiveTypeId.STRING).origin("3004107814189123655").done();
     b.aggregate("children", 0x7a7699b586c4eb86L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(false).ordered(true).multiple(true).origin("8824409524808248198").done();
-    b.alias("<SpanElement_Alias>");
+    b.alias("<span>");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStrongElement() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LanguageHTML", "StrongElement", 0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x194f0d7ef328cb64L);
+    b.class_(false, false, false);
+    // extends: LanguageHTML.structure.BodyElement
+    b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L);
+    b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/1823691213004917604");
+    b.version(3);
+    b.aggregate("children", 0x194f0d7ef328dce2L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(false).ordered(true).multiple(true).origin("1823691213004922082").done();
+    b.alias("<strong>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTextElement() {
@@ -198,7 +229,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/2478083191387628939");
     b.version(3);
     b.property("text", 0x2263eb887a86a84cL).type(PrimitiveTypeId.STRING).origin("2478083191387629644").done();
-    b.alias("<TextElement_Alias>");
+    b.alias("<text>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTitleElement() {
@@ -209,7 +240,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/2478083191387655783");
     b.version(3);
     b.property("text", 0x2263eb887a87122cL).type(PrimitiveTypeId.STRING).origin("2478083191387656748").done();
-    b.alias("<TitleElement_Alias>");
+    b.alias("<title>");
     return b.create();
   }
 }

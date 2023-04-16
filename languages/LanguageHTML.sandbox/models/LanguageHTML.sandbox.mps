@@ -17,13 +17,16 @@
         <child id="8824409524808361131" name="children" index="3WG3Ou" />
       </concept>
       <concept id="2478083191387662473" name="LanguageHTML.structure.ParagraphElement" flags="ng" index="1oTcc1">
-        <property id="2478083191387662709" name="text" index="1oTcbX" />
+        <child id="1823691213004997865" name="children" index="3EpgAn" />
       </concept>
       <concept id="2478083191387661453" name="LanguageHTML.structure.SpanElement" flags="ng" index="1oTcW5">
         <child id="8824409524808248198" name="children" index="3WGB8N" />
       </concept>
       <concept id="2478083191387655783" name="LanguageHTML.structure.TitleElement" flags="ng" index="1oTenJ">
         <property id="2478083191387656748" name="text" index="1oTfA$" />
+      </concept>
+      <concept id="2478083191387660014" name="LanguageHTML.structure.DivElement" flags="ng" index="1oTflA">
+        <child id="2478083191387660590" name="children" index="1oTcEA" />
       </concept>
       <concept id="2478083191387638831" name="LanguageHTML.structure.Document" flags="ng" index="1oTiuB">
         <child id="2478083191387642173" name="root" index="1oTjaP" />
@@ -34,6 +37,12 @@
       <concept id="2478083191387618531" name="LanguageHTML.structure.HtmlDocument" flags="ng" index="1oTptF">
         <child id="2478083191387646583" name="body" index="1oTg7Z" />
         <child id="2478083191387644493" name="head" index="1oTgB5" />
+      </concept>
+      <concept id="1823691213005080180" name="LanguageHTML.structure.ItalicTag" flags="ng" index="3Ep4Ga">
+        <child id="1823691213005081846" name="children" index="3Ep468" />
+      </concept>
+      <concept id="1823691213004917604" name="LanguageHTML.structure.StrongElement" flags="ng" index="3EpWoq">
+        <child id="1823691213004922082" name="children" index="3EpX6s" />
       </concept>
       <concept id="8824409524808689794" name="LanguageHTML.structure.Head" flags="ng" index="3WJj4R">
         <child id="8824409524808693282" name="children" index="3WJiYn" />
@@ -46,34 +55,31 @@
   <node concept="1oTiuB" id="2AKJ2fVH2e7">
     <property role="TrG5h" value="testRoot" />
     <node concept="1oTptF" id="7DQArm6NaYh" role="1oTjaP">
-      <node concept="3WJj4R" id="1_f3nVN3GJs" role="1oTgB5">
-        <node concept="1oTenJ" id="1_f3nVN7yAw" role="3WJiYn">
-          <property role="1oTfA$" value="title" />
-        </node>
-        <node concept="1oTkS3" id="1_f3nVN4w_O" role="3WJiYn">
-          <property role="1oTkf4" value="dfbvdf" />
+      <node concept="3WJj4R" id="1_f3nVN9ori" role="1oTgB5">
+        <node concept="1oTenJ" id="1_f3nVN9oro" role="3WJiYn">
+          <property role="1oTfA$" value="testing" />
         </node>
       </node>
-      <node concept="3WJjem" id="1_f3nVN3GQO" role="1oTg7Z">
-        <node concept="1oTkS3" id="1_f3nVN4IQN" role="3WJiBz">
-          <property role="1oTkf4" value="sdgvdg" />
-        </node>
-        <node concept="1oTcc1" id="1_f3nVN5sgY" role="3WJiBz">
-          <property role="1oTcbX" value="sadsad" />
-        </node>
-        <node concept="1oTcW5" id="1_f3nVN5sh6" role="3WJiBz">
-          <node concept="1oTkS3" id="1_f3nVN5she" role="3WGB8N">
-            <property role="1oTkf4" value="sdadsd" />
+      <node concept="3WJjem" id="1_f3nVN9ork" role="1oTg7Z">
+        <node concept="1oTflA" id="1_f3nVN9orq" role="3WJiBz">
+          <node concept="1oTcW5" id="1_f3nVN9oru" role="1oTcEA">
+            <node concept="1oTkS3" id="1_f3nVN9or$" role="3WGB8N">
+              <property role="1oTkf4" value="TestText" />
+            </node>
           </node>
-        </node>
-        <node concept="1oTcc1" id="1_f3nVN5FeT" role="3WJiBz">
-          <property role="1oTcbX" value="ghnmgghy" />
-        </node>
-        <node concept="1oTc52" id="1_f3nVN5FeB" role="3WJiBz">
-          <property role="1oTcvq" value="&quot;dsfds&quot;" />
-          <node concept="1oTcW5" id="1_f3nVN5Ff2" role="3WG3Ou">
-            <node concept="1oTkS3" id="1_f3nVN5Ff8" role="3WGB8N">
-              <property role="1oTkf4" value="МВАФА" />
+          <node concept="1oTcc1" id="1_f3nVNaFjw" role="1oTcEA">
+            <node concept="3EpWoq" id="1_f3nVNaOcH" role="3EpgAn">
+              <node concept="3Ep4Ga" id="1_f3nVNbkE9" role="3EpX6s">
+                <node concept="1oTkS3" id="1_f3nVNbkEb" role="3Ep468">
+                  <property role="1oTkf4" value="slim shady" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1oTc52" id="1_f3nVN9orP" role="1oTcEA">
+            <property role="1oTcvq" value="https://open.spotify.com/collection/tracks" />
+            <node concept="1oTkS3" id="1_f3nVN9orY" role="3WG3Ou">
+              <property role="1oTkf4" value="yoyoyo wassup" />
             </node>
           </node>
         </node>

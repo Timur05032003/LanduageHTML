@@ -18,10 +18,12 @@ public final class LanguageConceptSwitch {
   public static final int HeadChild = 6;
   public static final int HtmlDocument = 7;
   public static final int HtmlElement = 8;
-  public static final int ParagraphElement = 9;
-  public static final int SpanElement = 10;
-  public static final int TextElement = 11;
-  public static final int TitleElement = 12;
+  public static final int ItalicTag = 9;
+  public static final int ParagraphElement = 10;
+  public static final int SpanElement = 11;
+  public static final int StrongElement = 12;
+  public static final int TextElement = 13;
+  public static final int TitleElement = 14;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L);
@@ -34,8 +36,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x2263eb887a8704b9L, HeadChild);
     builder.put(0x2263eb887a867ce3L, HtmlDocument);
     builder.put(0x2263eb887a86e354L, HtmlElement);
+    builder.put(0x194f0d7ef32b4674L, ItalicTag);
     builder.put(0x2263eb887a872889L, ParagraphElement);
     builder.put(0x2263eb887a87248dL, SpanElement);
+    builder.put(0x194f0d7ef328cb64L, StrongElement);
     builder.put(0x2263eb887a86a58bL, TextElement);
     builder.put(0x2263eb887a870e67L, TitleElement);
     myIndex = builder.seal();

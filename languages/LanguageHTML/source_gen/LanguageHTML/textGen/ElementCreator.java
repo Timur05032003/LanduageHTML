@@ -34,13 +34,13 @@ public abstract class ElementCreator {
       for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
         result += ElementCreator.createBlock(itNode, ctx);
       }
-      result += "\n</head>\n";
+      result += "</head>\n";
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.Body$mf)) {
       result += "<body>\n";
       for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
         result += ElementCreator.createBlock(itNode, ctx);
       }
-      result += "\n</body>\n";
+      result += "</body>\n";
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.DivElement$9$)) {
       result += "<div>\n";
       for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
@@ -55,7 +55,9 @@ public abstract class ElementCreator {
       result += "</span>";
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.ParagraphElement$_9)) {
       result += "\n<p>\n";
-      result += SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.ParagraphElement$_9), PROPS.text$jieA);
+      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+        result += ElementCreator.createBlock(itNode, ctx);
+      }
       result += "\n</p>\n";
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.TitleElement$wb)) {
       result += "<title>";
@@ -67,6 +69,18 @@ public abstract class ElementCreator {
         result += ElementCreator.createBlock(itNode, ctx);
       }
       result += "\n</a>";
+    } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.StrongElement$Pn)) {
+      result += "<strong>";
+      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+        result += ElementCreator.createBlock(itNode, ctx);
+      }
+      result += "</strong>";
+    } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.ItalicTag$hK)) {
+      result += "<i>";
+      for (SNode itNode : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+        result += ElementCreator.createBlock(itNode, ctx);
+      }
+      result += "</i>";
     } else if (SNodeOperations.isInstanceOf(node, CONCEPTS.TextElement$H$)) {
       result += SPropertyOperations.getString(SNodeOperations.cast(node, CONCEPTS.TextElement$H$), PROPS.text$7iLc);
     }
@@ -87,11 +101,12 @@ public abstract class ElementCreator {
     /*package*/ static final SConcept ParagraphElement$_9 = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872889L, "LanguageHTML.structure.ParagraphElement");
     /*package*/ static final SConcept TitleElement$wb = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a870e67L, "LanguageHTML.structure.TitleElement");
     /*package*/ static final SConcept AnchorElement$tJ = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872acaL, "LanguageHTML.structure.AnchorElement");
+    /*package*/ static final SConcept StrongElement$Pn = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x194f0d7ef328cb64L, "LanguageHTML.structure.StrongElement");
+    /*package*/ static final SConcept ItalicTag$hK = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x194f0d7ef32b4674L, "LanguageHTML.structure.ItalicTag");
     /*package*/ static final SConcept TextElement$H$ = MetaAdapterFactory.getConcept(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a86a58bL, "LanguageHTML.structure.TextElement");
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty text$jieA = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872889L, 0x2263eb887a872975L, "text");
     /*package*/ static final SProperty text$GItu = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a870e67L, 0x2263eb887a87122cL, "text");
     /*package*/ static final SProperty href$TqGt = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a872acaL, 0x2263eb887a872c52L, "href");
     /*package*/ static final SProperty text$7iLc = MetaAdapterFactory.getProperty(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a86a58bL, 0x2263eb887a86a84cL, "text");

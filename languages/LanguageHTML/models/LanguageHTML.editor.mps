@@ -7,7 +7,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="qa5w" ref="r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)" implicit="true" />
+    <import index="qa5w" ref="r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -207,8 +207,10 @@
         <node concept="l2Vlx" id="7DQArm6LjI6" role="2iSdaV" />
         <node concept="3XFhqQ" id="1_f3nVN5e3x" role="3EZMnx" />
         <node concept="3XFhqQ" id="1_f3nVN5Tlu" role="3EZMnx" />
-        <node concept="3F0A7n" id="1_f3nVN5e8X" role="3EZMnx">
-          <ref role="1NtTu8" to="qa5w:29zUSxUxM_P" resolve="text" />
+        <node concept="3F2HdR" id="1_f3nVNayrG" role="3EZMnx">
+          <ref role="1NtTu8" to="qa5w:1_f3nVNawjD" resolve="children" />
+          <node concept="2iRkQZ" id="1_f3nVNayrJ" role="2czzBx" />
+          <node concept="VPM3Z" id="1_f3nVNayrK" role="3F10Kt" />
         </node>
       </node>
       <node concept="3EZMnI" id="7DQArm6LjUH" role="3EZMnx">
@@ -322,6 +324,43 @@
         <node concept="l2Vlx" id="7DQArm6N02e" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="7DQArm6MZnO" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1_f3nVNae9w">
+    <property role="3GE5qa" value="Elements" />
+    <ref role="1XX52x" to="qa5w:1_f3nVNacH$" resolve="StrongElement" />
+    <node concept="3EZMnI" id="1_f3nVNaeco" role="2wV5jI">
+      <node concept="3XFhqQ" id="1_f3nVNae_l" role="3EZMnx" />
+      <node concept="3F0ifn" id="1_f3nVNamNV" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;strong&gt;" />
+      </node>
+      <node concept="3F2HdR" id="1_f3nVNamU_" role="3EZMnx">
+        <ref role="1NtTu8" to="qa5w:1_f3nVNadNy" resolve="children" />
+        <node concept="2iRfu4" id="1_f3nVNamUC" role="2czzBx" />
+        <node concept="VPM3Z" id="1_f3nVNamUD" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="1_f3nVNaeqB" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;/strong&gt;" />
+      </node>
+      <node concept="l2Vlx" id="1_f3nVNaecr" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1_f3nVNaP3k">
+    <property role="3GE5qa" value="Elements" />
+    <ref role="1XX52x" to="qa5w:1_f3nVNaOpO" resolve="ItalicTag" />
+    <node concept="3EZMnI" id="1_f3nVNaP6c" role="2wV5jI">
+      <node concept="3F0ifn" id="1_f3nVNaPbe" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;i&gt;" />
+      </node>
+      <node concept="3F2HdR" id="1_f3nVNaPfM" role="3EZMnx">
+        <ref role="1NtTu8" to="qa5w:1_f3nVNaONQ" resolve="children" />
+        <node concept="2iRfu4" id="1_f3nVNaPfP" role="2czzBx" />
+        <node concept="VPM3Z" id="1_f3nVNaPfQ" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="1_f3nVNaPmV" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;/i&gt;" />
+      </node>
+      <node concept="l2Vlx" id="1_f3nVNaP6f" role="2iSdaV" />
     </node>
   </node>
 </model>

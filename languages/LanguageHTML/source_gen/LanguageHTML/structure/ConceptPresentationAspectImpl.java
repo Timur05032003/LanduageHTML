@@ -18,8 +18,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_HeadChild;
   private ConceptPresentation props_HtmlDocument;
   private ConceptPresentation props_HtmlElement;
+  private ConceptPresentation props_ItalicTag;
   private ConceptPresentation props_ParagraphElement;
   private ConceptPresentation props_SpanElement;
+  private ConceptPresentation props_StrongElement;
   private ConceptPresentation props_TextElement;
   private ConceptPresentation props_TitleElement;
 
@@ -31,33 +33,38 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AnchorElement:
         if (props_AnchorElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<AnchorElement_Alias>");
+          cpb.shortDesc("<anchor> tag");
+          cpb.rawPresentation("<anchor>");
           props_AnchorElement = cpb.create();
         }
         return props_AnchorElement;
       case LanguageConceptSwitch.Body:
         if (props_Body == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Body");
+          cpb.shortDesc("<body> tag");
+          cpb.rawPresentation("<body>");
           props_Body = cpb.create();
         }
         return props_Body;
       case LanguageConceptSwitch.BodyElement:
         if (props_BodyElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("abstract body element");
           props_BodyElement = cpb.create();
         }
         return props_BodyElement;
       case LanguageConceptSwitch.DivElement:
         if (props_DivElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<DivElement_Alias>");
+          cpb.shortDesc("<div> tag");
+          cpb.rawPresentation("<div>");
           props_DivElement = cpb.create();
         }
         return props_DivElement;
       case LanguageConceptSwitch.Document:
         if (props_Document == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("html");
           cpb.presentationByName();
           props_Document = cpb.create();
         }
@@ -65,54 +72,77 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Head:
         if (props_Head == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Head");
+          cpb.shortDesc("<head> tag");
+          cpb.rawPresentation("<head>");
           props_Head = cpb.create();
         }
         return props_Head;
       case LanguageConceptSwitch.HeadChild:
         if (props_HeadChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("abstract head child element");
           props_HeadChild = cpb.create();
         }
         return props_HeadChild;
       case LanguageConceptSwitch.HtmlDocument:
         if (props_HtmlDocument == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("HtmlDocument");
+          cpb.shortDesc("<html> tag");
+          cpb.rawPresentation("<html>");
           props_HtmlDocument = cpb.create();
         }
         return props_HtmlDocument;
       case LanguageConceptSwitch.HtmlElement:
         if (props_HtmlElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("abstract html element");
           props_HtmlElement = cpb.create();
         }
         return props_HtmlElement;
+      case LanguageConceptSwitch.ItalicTag:
+        if (props_ItalicTag == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("<i> tag");
+          cpb.rawPresentation("<i>");
+          props_ItalicTag = cpb.create();
+        }
+        return props_ItalicTag;
       case LanguageConceptSwitch.ParagraphElement:
         if (props_ParagraphElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<ParagraphElement_Alias>");
+          cpb.rawPresentation("<paragraph>");
           props_ParagraphElement = cpb.create();
         }
         return props_ParagraphElement;
       case LanguageConceptSwitch.SpanElement:
         if (props_SpanElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<SpanElement_Alias>");
+          cpb.shortDesc("<span> tag");
+          cpb.rawPresentation("<span>");
           props_SpanElement = cpb.create();
         }
         return props_SpanElement;
+      case LanguageConceptSwitch.StrongElement:
+        if (props_StrongElement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("<strong> tag");
+          cpb.rawPresentation("<strong>");
+          props_StrongElement = cpb.create();
+        }
+        return props_StrongElement;
       case LanguageConceptSwitch.TextElement:
         if (props_TextElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<TextElement_Alias>");
+          cpb.shortDesc("text element");
+          cpb.rawPresentation("<text>");
           props_TextElement = cpb.create();
         }
         return props_TextElement;
       case LanguageConceptSwitch.TitleElement:
         if (props_TitleElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<TitleElement_Alias>");
+          cpb.shortDesc("<title> tag");
+          cpb.rawPresentation("<title>");
           props_TitleElement = cpb.create();
         }
         return props_TitleElement;
