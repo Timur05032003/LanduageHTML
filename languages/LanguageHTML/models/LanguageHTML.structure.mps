@@ -116,21 +116,13 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="29zUSxUxKiT">
-    <property role="EcuMT" value="2478083191387653305" />
-    <property role="R5$K7" value="true" />
-    <property role="TrG5h" value="HeadChild" />
-    <property role="3GE5qa" value="Elements.HeadElements" />
-    <property role="R4oN_" value="abstract head child element" />
-    <ref role="1TJDcQ" node="29zUSxUxIdk" resolve="HtmlElement" />
-  </node>
   <node concept="1TIwiD" id="29zUSxUxKTB">
     <property role="EcuMT" value="2478083191387655783" />
     <property role="TrG5h" value="TitleElement" />
     <property role="34LRSv" value="&lt;title&gt;" />
-    <property role="3GE5qa" value="Elements.HeadElements" />
+    <property role="3GE5qa" value="Elements" />
     <property role="R4oN_" value="&lt;title&gt; tag" />
-    <ref role="1TJDcQ" node="29zUSxUxKiT" resolve="HeadChild" />
+    <ref role="1TJDcQ" node="29zUSxUxIdk" resolve="HtmlElement" />
     <node concept="1TJgyj" id="7WpIU0MW5_C" role="1TKVEi">
       <property role="IQ2ns" value="9158557613958388072" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

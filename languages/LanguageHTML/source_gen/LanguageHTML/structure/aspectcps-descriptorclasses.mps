@@ -5326,7 +5326,7 @@
               <property role="3oM_SC" value="extends:" />
             </node>
             <node concept="3oM_SD" id="u$" role="1PaTwD">
-              <property role="3oM_SC" value="LanguageHTML.structure.HeadChild" />
+              <property role="3oM_SC" value="LanguageHTML.structure.HtmlElement" />
             </node>
           </node>
         </node>
@@ -5348,7 +5348,7 @@
                 <property role="1adDun" value="0xa650bdfedc3caeb8L" />
               </node>
               <node concept="1adDum" id="uF" role="37wK5m">
-                <property role="1adDun" value="0x2263eb887a8704b9L" />
+                <property role="1adDun" value="0x2263eb887a86e354L" />
               </node>
             </node>
           </node>

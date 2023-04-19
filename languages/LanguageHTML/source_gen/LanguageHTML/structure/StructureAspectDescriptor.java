@@ -235,8 +235,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForTitleElement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LanguageHTML", "TitleElement", 0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a870e67L);
     b.class_(false, false, false);
-    // extends: LanguageHTML.structure.HeadChild
-    b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a8704b9L);
+    // extends: LanguageHTML.structure.HtmlElement
+    b.super_(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a86e354L);
     b.origin("r:25f659e2-b953-412a-a6d6-807442bcb348(LanguageHTML.structure)/2478083191387655783");
     b.version(3);
     b.aggregate("children", 0x7f19bba032f05968L).target(0xcfdb8e6e45b145d3L, 0xa650bdfedc3caeb8L, 0x2263eb887a868235L).optional(true).ordered(true).multiple(true).origin("9158557613958388072").done();
